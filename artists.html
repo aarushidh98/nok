@@ -20,6 +20,104 @@ html.lenis { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
+
+.div-block-31{
+  height: auto!important;
+}
+
+/* ── Mobile: reorder artist blocks to Heading → Image → Paragraph ── */
+@media screen and (max-width: 479px) {
+  .div-block-31 {
+    flex-direction: column !important;
+    height: auto !important;
+    margin-top: 8vh;
+    margin-bottom: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 30px;
+  }
+
+  /* Heading: order 1 */
+  .div-block-33 .heading-11 {
+    order: 1;
+  }
+
+  /* Image div: order 2 */
+  .div-block-32 {
+    order: 2;
+    width: 90vw !important;
+    height: 380px !important;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+
+  /* Text container: becomes a flex column so we can reorder heading vs paragraph */
+  .div-block-33 {
+    order: 1;
+    width: 100% !important;
+    padding-left: 0 !important;
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  /* Heading inside text block: order 1 (top) */
+  .div-block-33 > div:first-child {
+    order: 1;
+    margin-bottom: 0;
+  }
+
+  /* Paragraph inside text block: order 3 (below image) — image is order 2 but sits outside .div-block-33,
+     so we push the paragraph down visually by making the whole .div-block-31 a flex column
+     and reordering children directly */
+}
+
+/* Reorder direct children of .div-block-31 on mobile */
+@media screen and (max-width: 479px) {
+  .div-block-31 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* .div-block-32 is the image — push it between heading and paragraph */
+  .div-block-31 .div-block-32 {
+    order: 2;
+  }
+
+  /* .div-block-33 wraps heading + paragraph — split them using a trick:
+     show heading first (order 1), hide paragraph temporarily,
+     then show it after image (order 3) */
+  .div-block-31 .div-block-33 {
+    order: 1;
+    display: contents; /* dissolves the wrapper so children become direct flex children */
+  }
+
+  .div-block-31 .div-block-33 > div:first-child {
+    order: 1; /* heading */
+  }
+
+  .div-block-31 .div-block-33 .text-block-7 {
+    order: 3; /* paragraph goes after image */
+    padding-bottom: 20px;
+  }
+  .text-block-7 {
+    margin-top: 0px!important;
+    
+  }
+  .div-block-32 {
+    margin-bottom: 0px!important;
+  }
+  .text-block-7 {
+    font-size: 4vw!important;
+    line-height: 1.6!important;
+  }
+  .heading-11 {
+    font-size: 10vw!important;
+  }
+  .div-block-31.up{
+    padding-bottom: 25%!important;
+  }
+  
+}
 </style>
 </head>
 <body>
@@ -27,10 +125,67 @@ html.lenis { height: auto; }
 
 <div class="div-block-29"><div class="div-block-30 _01"></div><div class="div-block-30 _02"></div><div class="div-block-30 _03"></div><div class="div-block-30 _04"></div></div>
 
-<div class="div-block-31"><div class="div-block-32 see _1"></div><div class="div-block-33"><div><h1 class="heading-11">Nands</h1></div><div class="text-block-7">NANDs is a seasoned tattoo maestro renowned for his exceptional skill and passion for the craft, known for his dedication to quality and creativity. With a calm demeanor and a wealth of experience, Mark embodies the essence of timeless tattoo artistry.</div></div></div>
-<div class="div-block-31 up"><div class="div-block-32 see _2"></div><div class="div-block-33"><div><h1 class="heading-11">PRATHAM</h1></div><div class="text-block-7">PRATHAM is a seasoned tattoo maestro renowned for his exceptional skill and passion for the craft, known for his dedication to quality and creativity. With a calm demeanor and a wealth of experience, Mark embodies the essence of timeless tattoo artistry.</div></div></div>
-<div class="div-block-31 up"><div class="div-block-32 see _3"></div><div class="div-block-33"><div><h1 class="heading-11">PRATibha</h1></div><div class="text-block-7">PRATHAM is a seasoned tattoo maestro renowned for his exceptional skill and passion for the craft, known for his dedication to quality and creativity. With a calm demeanor and a wealth of experience, Mark embodies the essence of timeless tattoo artistry.</div></div></div>
-<div class="div-block-31 up"><div class="div-block-32 see _4"></div><div class="div-block-33"><div><h1 class="heading-11">Simar</h1></div><div class="text-block-7">PRATHAM is a seasoned tattoo maestro renowned for his exceptional skill and passion for the craft, known for his dedication to quality and creativity. With a calm demeanor and a wealth of experience, Mark embodies the essence of timeless tattoo artistry.</div></div></div>
+<div class="div-block-31">
+  <div class="div-block-32"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/693fab76226023731c03ce92_Nandini.jpg"></div>
+  <div class="div-block-33">
+    <div><h1 class="paragraph _1">NANDSSS</h1></div>
+    <div><h1 class="paragraph _22 _44">NANDSSS</h1></div>
+    <div class="text-field-2 pd">As the "CEO and tattoo artist", Nandini is the force that keeps everything moving and evolving.<br><br>
+      At NOK, she is constantly exploring new ways to express art.<br><br>
+      Her work leans into meaningful, cute tattoos that carry charm without trying too hard.
+      There is a quiet confidence in her designs that makes even the tiniest pieces feel complete.
+      She thrives on experimentation, always pushing herself to see what else is possible.<br><br>
+      Around her, the energy is never too serious for too long.
+      Dad jokes slip in effortlessly, followed by just the right amount of sarcasm to keep things real.<br><br>
+      She finds her rhythm in spaces filled with creative minds and shared stories.
+      Conversations turn into ideas, and ideas slowly turn into art.
+      And somewhere in that mix of humour and curiosity, she builds a space that feels alive.
+</div>
+  </div>
+</div>
+
+<div class="div-block-31 up">
+  <div class="div-block-32"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/69525bc69beba64ab015d614_shared%20image%20(1).jpg"></div>
+  <div class="div-block-33">
+    <div><h1 class="paragraph _1">PRATHAM</h1></div>
+    <div><h1 class="paragraph _22 _44">PRATHAM</h1></div>
+    <div class="text-field-2 pd">At Nok, Pratham brings a calm that you feel the moment you sit with him.<br><br>
+      As our resident "senior artist", his approach is rooted in patience, clarity, and craft.<br><br>
+      He draws deeply from nature, leaning into everything serene and quietly artistic.
+      His lines are some of the sharpest you will come across, clean, precise, and confidently 
+      placed.
+      There is a level of control in his work that makes every detail feel just right.<br><br>
+      What truly sets him apart is his ability to understand your idea beyond words.
+      He takes what you imagine and shapes it into something that belongs on your skin.<br><br>
+      Inside the studio, he also guides our students through a thoughtfully built tattoo handbook.
+      There is a steady, big brother energy about him that instantly puts people at ease.
+      And in that comfort, clients find the space to open up, trust the process, and see their ideas 
+      come to life.
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom: 5%;" class="div-block-31 up">
+  <div class="div-block-32"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/693fabd23efb9da444d9d9b5_Pratibha.jpg"></div>
+  <div class="div-block-33">
+    <div><h1 class="paragraph _1">PRATIBHA</h1></div>
+    <div><h1 class="paragraph _22 _44">PRATIBHA</h1></div>
+    <div class="text-field-2 pd">At Nok, Pratibha brings a kind of energy you notice before you even see her work.
+      A fashion enthusiast at heart, her world is built on colour, texture, and self expression.<br><br>
+      As our resident "stick and poke artist", she leans into the beauty of slow, precise craftsmanship.<br><br>
+      Her specialty lies in clean hand poke line work that feels soft yet striking on the skin.
+      She also creates delicate lithograph tattoos that carry an almost vintage, storybook charm.
+      Beyond the tattoo station, she is the voice shaping NOK’s presence online as our social media 
+      manager.<br><br>
+      Her aesthetic is loud in the best way, full of bold choices and unapologetic style.
+      Think vibrant colours, ever changing hair, and combat boots that complete the look.
+      There is a sense of playfulness in everything she creates, from ink to digital to everyday life.
+      And somewhere between cute art and quiet precision, she makes her mark in a way that stays with you.
+    </div>
+  </div>
+</div>
+
+
 
 <div class="footer"><div class="div-block-23"><img sizes="(max-width: 1080px) 100vw, 1080px" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image-p-800.png 800w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png 1080w" alt="" src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png" loading="lazy" class="image-2"/></div><div class="div-block-24"><a href="artists.html" class="button-2 w-button">ARTISTs</a><a href="gallery.html" class="button-2 w-button">GALLERY</a><a href="book-appointment.html" class="button-2 w-button">BOOKINGS</a><a href="our-story.html" class="button-2 w-button">OUR STORY</a><a href="contact-us.html" class="button-2 w-button">CONTACT US</a></div><div class="div-block-25"><div class="div-block-34"><h1 class="add">Shop no.95, N.D.M.C Market, Connaught Cir, opp. Haldiram, Delhi:110001, Connaught Place, New Delhi, Delhi, 110001</h1></div><div class="div-block-35"><a href="https://www.instagram.com/nokbynandsss/" target="_blank" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a278182e4e686e5b58f18_instagram.png" loading="lazy" width="35" sizes="35px" alt="" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a278182e4e686e5b58f18_instagram-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a278182e4e686e5b58f18_instagram.png 512w" class="insta"/></a><a href="tel:9810448513" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2b76e0b5bd1329782753_whatsapp.png" loading="lazy" width="35" alt="" class="insta"/></a><a href="#" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c2b541866fec945c5cb_threads.png" loading="lazy" width="35" alt="" class="insta"/></a><a href="https://www.facebook.com/nokbynandsss/" target="_blank" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c6369ad25f0c4b5ceb1_facebook.png" loading="lazy" width="35" sizes="35px" alt="" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c6369ad25f0c4b5ceb1_facebook-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c6369ad25f0c4b5ceb1_facebook.png 512w" class="insta"/></a></div></div></div>
 <div class="div-block-22"><div class="text-block-5">ALL RIGHTS RESERVED 2026 NOK BY NANDS SITE BUILT BY <a href="https://BURBONSTUDIOS.COM" class="link">BURBONSTUDIOS.COM</a></div></div>
