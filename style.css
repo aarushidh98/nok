@@ -3147,7 +3147,7 @@ blockquote {
 .div-block-30 {
   filter: grayscale();
   background-color: #000;
-  background-image: url("tattoo/nandi.jpg");
+  background-image: url("tattoo/eye.webp");
   background-position: 50%;
   background-size: cover;
   width: 30%;
@@ -3155,7 +3155,7 @@ blockquote {
 }
 
 .div-block-30._2 {
-  background-image: url("tattoo/om.jpg");
+  background-image: url("tattoo/shivi.jpg");
 }
 
 .div-block-30._2._32 {
@@ -3196,6 +3196,10 @@ blockquote {
 
 .div-block-30._4 {
   background-image: url("tattoo/Stars.jpg");
+}
+
+.div-block-30._B {
+  background-image: url("tattoo/eye.webp");
 }
 
 .div-block-30._4.rvdf {
