@@ -3259,7 +3259,7 @@ blockquote {
 }
 
 .text-block-6 {
-  width: 1120px;
+  /* width: 1120px; */
   max-width: 100%;
   margin-bottom: 0%;
   font-family: Gunterz, sans-serif;
