@@ -71,39 +71,38 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 .hide { display: none !important; }
 </style></div>
     <main class="main-wrapper">
-      <header class="home-message_component">
-        <div class="home-message_content max-width-xlarge">
-          <div class="flex-vert-lt flex-gap-small">
-            <div class="form-wrapper w-form">
-              <form id="wf-form-" name="wf-form-" data-name="" method="get" class="form_enquiries">
-                <div class="flex-vert-lt flex-gap-small _1">
-                  <select id="configure-select" name="Select" required="" class="form_select-2 w-select">
-                    <option value="">Select Artist</option>
-                    <option value="Jake">Jake</option>
-                    <option value="West">West</option>
-                    <option value="Meg">Meg</option>
-                    <option value="Lee">Lee</option>
-                    <option value="Mark">Mark</option>
-                    <option value="Lisa">Lisa</option>
-                  </select>
-                </div>
-                <input class="text-field-2 w-input" maxlength="256" name="Name-2" placeholder="Name" type="text" id="Name-2" required=""/>
-                <input class="text-field-2 w-input" maxlength="256" name="Email-2" placeholder="Email" type="text" id="Email-2" required=""/>
-                <input class="text-field-2 w-input" maxlength="256" name="Phone-2" placeholder="Phone" type="text" id="Phone-2" required=""/>
-                <select id="field-2" name="field-2" class="select-field w-select">
-                  <option value="">SELECT SERVICE</option>
-                  <option value="TATTOO">TATTOO</option>
-                  <option value="PIERCING">PIERCING</option>
-                  <option value="TOOTH GEM">TOOTH GEM</option>
-                </select>
-                <a href="#" class="button-3 w-button">BOOK</a>
-              </form>
-              <div class="form_message-success-2 w-form-done"><div>Thank you! Your submission has been received!</div></div>
-              <div class="form_message-error-2 w-form-fail"><div class="text-size-small">Oops! Something went wrong.</div></div>
-            </div>
-          </div>
-        </div>
-      </header>
+     <div class="form-block phn w-form">
+  <form id="email-form" name="email-form" data-name="Email Form">
+    
+    <!-- Web3Forms Access Key (hidden) -->
+    <input type="hidden" name="access_key" value="401f5e14-ebcd-4180-ba43-68a87ba45096">
+    <!-- This sets the subject line of the email you receive -->
+    <input type="hidden" name="subject" value="New Booking Enquiry from Website">
+
+    <input class="text-field-2 w-input" maxlength="256" name="name" placeholder="Name" type="text" id="name-2"/>
+    <input class="text-field-2 w-input" maxlength="256" name="email" placeholder="Email" type="email" id="email-2" required=""/>
+    <input class="text-field-2 w-input" maxlength="256" name="phone" placeholder="Phone number" type="tel" id="Phone-2" required=""/>
+    
+    <select id="Select-2" name="service" class="select-field w-select">
+      <option value="">Select Services</option>
+      <option value="Tattoo">TATTOO</option>
+      <option value="Piercing">PIERCING</option>
+      <option value="Tooth Gem">TOOTH GEM</option>
+    </select>
+
+    <input type="submit" data-wait="Please wait..." class="button-3 w-button" value="book"/>
+  </form>
+
+  <!-- Success Message -->
+  <div class="w-form-done" id="form-success" style="display:none;">
+    <div>Thank you! Your submission has been received!</div>
+  </div>
+
+  <!-- Error Message -->
+  <div class="w-form-fail" id="form-error" style="display:none;">
+    <div>Oops! Something went wrong while submitting the form.</div>
+  </div>
+</div>
     </main>
   </div>
 </div>
@@ -123,6 +122,119 @@ if (typeof Webflow !== 'undefined' && Webflow.env("editor") === undefined) {
   function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
 }
+</script>
+  <script>
+  const form = document.getElementById('email-form');
+  const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  // ── Validation Rules ──────────────────────────────────────────
+  function validateForm() {
+    const name    = document.getElementById('name-2');
+    const email   = document.getElementById('email-2');
+    const phone   = document.getElementById('Phone-2');
+    const service = document.getElementById('Select-2');
+
+    // Remove old errors first
+    clearErrors();
+
+    let isValid = true;
+
+    // Name — required
+    if (name.value.trim() === '') {
+      showError(name, 'Please enter your name');
+      isValid = false;
+    }
+
+    // Email — required + format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email.value.trim() === '') {
+      showError(email, 'Please enter your email');
+      isValid = false;
+    } else if (!emailRegex.test(email.value.trim())) {
+      showError(email, 'Please enter a valid email address');
+      isValid = false;
+    }
+
+    // Phone — required + exactly 10 digits
+    const phoneDigits = phone.value.replace(/\D/g, ''); // strip non-digits
+    if (phone.value.trim() === '') {
+      showError(phone, 'Please enter your phone number');
+      isValid = false;
+    } else if (phoneDigits.length !== 10) {
+      showError(phone, 'Phone number must be exactly 10 digits');
+      isValid = false;
+    }
+
+    // Service — must be selected
+    if (service.value === '') {
+      showError(service, 'Please select a service');
+      isValid = false;
+    }
+
+    return isValid;
+  }
+
+  // ── Helper: Show Error ────────────────────────────────────────
+  function showError(input, message) {
+    input.style.border = '1.5px solid red';
+    const error = document.createElement('div');
+    error.className = 'form-error-msg';
+    error.style.cssText = 'color: red; font-size: 12px; margin-top: 4px; margin-bottom: 6px;';
+    error.innerText = message;
+    input.parentNode.insertBefore(error, input.nextSibling);
+  }
+
+  // ── Helper: Clear All Errors ──────────────────────────────────
+  function clearErrors() {
+    document.querySelectorAll('.form-error-msg').forEach(el => el.remove());
+    document.querySelectorAll('.text-field-2, .select-field').forEach(el => {
+      el.style.border = '';
+    });
+  }
+
+  // ── Block non-numeric keys on phone field ─────────────────────
+  document.getElementById('Phone-2').addEventListener('keypress', function (e) {
+    if (!/[0-9]/ .test(e.key)) {
+      e.preventDefault(); // stops letters & symbols being typed
+    }
+  });
+
+  // ── Form Submit ───────────────────────────────────────────────
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    if (!validateForm()) return; // stop if validation fails
+
+    const submitBtn = form.querySelector('[type="submit"]');
+    submitBtn.value = 'Please wait...';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
+      } else {
+        errorMsg.style.display = 'block';
+        submitBtn.value = 'book';
+        submitBtn.disabled = false;
+      }
+    } catch (error) {
+      errorMsg.style.display = 'block';
+      submitBtn.value = 'book';
+      submitBtn.disabled = false;
+    }
+  });
 </script>
 </body>
 </html>
