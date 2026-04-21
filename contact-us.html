@@ -279,31 +279,36 @@ html.lenis { height: auto; }
       <div class="home-message_content max-width-xlarge">
         <div class="flex-vert-lt flex-gap-small">
           <div class="form-wrapper w-form">
-            <form id="wf-form-" name="wf-form-" data-name="" method="get" class="form_enquiries">
-              <div class="flex-vert-lt flex-gap-small _1">
-                <select id="configure-select" name="Select" required="" class="form_select-2 w-select">
-                  <option value="">Select Artist</option>
-                  <option value="Jake">Jake</option>
-                  <option value="West">West</option>
-                  <option value="Meg">Meg</option>
-                  <option value="Lee">Lee</option>
-                  <option value="Mark">Mark</option>
-                  <option value="Lisa">Lisa</option>
-                </select>
-              </div>
-              <input class="text-field-2 w-input" maxlength="256" name="Name-2" placeholder="Name" type="text" id="Name-2" required=""/>
-              <input class="text-field-2 w-input" maxlength="256" name="Email-2" placeholder="Email" type="text" id="Email-2" required=""/>
-              <input class="text-field-2 w-input" maxlength="256" name="Phone-2" placeholder="Phone" type="text" id="Phone-2" required=""/>
-              <select id="field-2" name="field-2" class="select-field w-select">
-                <option value="">SELECT SERVICE</option>
-                <option value="TATTOO">TATTOO</option>
-                <option value="PIERCING">PIERCING</option>
-                <option value="TOOTH GEM">TOOTH GEM</option>
-              </select>
-              <a href="#" class="button-3 w-button">BOOK</a>
-            </form>
-            <div class="form_message-success-2 w-form-done"><div>Thank you! Your submission has been received!</div></div>
-            <div class="form_message-error-2 w-form-fail"><div class="text-size-small">Oops! Something went wrong while submitting the form. Please check your details and try again.</div></div>
+              <form id="email-form" name="email-form" data-name="Email Form">
+          
+          <!-- Web3Forms Access Key (hidden) -->
+          <input type="hidden" name="access_key" value="401f5e14-ebcd-4180-ba43-68a87ba45096">
+          <!-- This sets the subject line of the email you receive -->
+          <input type="hidden" name="subject" value="New Booking Enquiry from Website">
+      
+          <input class="text-field-2 w-input" maxlength="256" name="name" placeholder="Name" type="text" id="name-2"/>
+          <input class="text-field-2 w-input" maxlength="256" name="email" placeholder="Email" type="email" id="email-2" required=""/>
+          <input class="text-field-2 w-input" maxlength="256" name="phone" placeholder="Phone number" type="tel" id="Phone-2" required=""/>
+          
+          <select id="Select-2" name="service" class="select-field w-select">
+            <option value="">Select Services</option>
+            <option value="Tattoo">TATTOO</option>
+            <option value="Piercing">PIERCING</option>
+            <option value="Tooth Gem">TOOTH GEM</option>
+          </select>
+      
+          <input type="submit" data-wait="Please wait..." class="button-3 w-button" value="book"/>
+        </form>
+
+  <!-- Success Message -->
+      <div class="w-form-done" id="form-success" style="display:none;">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+
+  <!-- Error Message -->
+      <div class="w-form-fail" id="form-error" style="display:none;">
+        <div>Oops! Something went wrong while submitting the form.</div>
+      </div>
           </div>
         </div>
       </div>
