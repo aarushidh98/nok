@@ -189,7 +189,7 @@ if (typeof Webflow !== 'undefined' && Webflow.env("editor") === undefined) {
         body: JSON.stringify(payload) // ✅ Send as JSON directly
       });
 
-      if (response.ok) {
+      if (response.ok || result.success) {
         form.style.display = 'none';
         successMsg.style.display = 'block';
         errorMsg.style.display = 'none';
