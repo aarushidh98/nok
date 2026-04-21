@@ -493,9 +493,12 @@ button, [type="button"], [type="reset"] {
 
 .w-form-done {
   text-align: center;
-  background-color: #ddd;
-  padding: 20px;
-  display: none;
+    background-color: #1c8915;
+    padding: 20px;
+    display: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
 }
 
 .w-form-fail {
