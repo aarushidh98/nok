@@ -42,6 +42,21 @@ html.lenis { height: auto; }
 .div-block-35.hd{
   display: none;
 }
+#form-success {
+  text-align: center;
+  background-color: #1c8915;
+  padding: 20px;
+  display: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+#form-error {
+  background-color: #ffdede;
+  margin-top: 10px;
+  padding: 10px;
+  display: none;
+}
 </style>
 </head>
 <body>
@@ -94,12 +109,12 @@ body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
         </form>
 
   <!-- Success Message -->
-      <div class="w-form-done" id="form-success" style="display:none;">
+      <div id="form-success" style="display:none;">
         <div>Thank you! Your submission has been received!</div>
       </div>
 
   <!-- Error Message -->
-      <div class="w-form-fail" id="form-error" style="display:none;">
+      <div id="form-error" style="display:none;">
         <div>Oops! Something went wrong while submitting the form.</div>
       </div>
     </div>
