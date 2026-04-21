@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
    // Replace the payload section in form.js with this
 const payload = {
-  access_key: '401f5e14-ebcd-4180-ba43-68a87ba45096',
+  access_key: form.querySelector('[name="access_key"]').value, // ✅ reads from HTML
   subject: 'New Booking Enquiry from Website',
   name:    form.querySelector('[name="name"]').value,
   email:   form.querySelector('[name="email"]').value,
