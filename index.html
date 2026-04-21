@@ -34,7 +34,21 @@ html.lenis { height: auto; }
   display: inline-block;
   animation: arrow-pulse 1s ease-in-out infinite;
 }
-
+#form-success {
+  text-align: center;
+  background-color: #1c8915;
+  padding: 20px;
+  display: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+}
+#form-error {
+  background-color: #ffdede;
+  margin-top: 10px;
+  padding: 10px;
+  display: none;
+}
 @media screen and (max-width: 479px) {
     .text-block-2.d {
         font-size: 3.3vw;        
@@ -141,11 +155,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     <!-- This sets the subject line of the email you receive -->
     <input type="hidden" name="subject" value="New Booking Enquiry from Website">
 
-    <input class="text-field-2" maxlength="256" name="name" placeholder="Name" type="text" id="name-2"/>
-    <input class="text-field-2" maxlength="256" name="email" placeholder="Email" type="email" id="email-2" required=""/>
-    <input class="text-field-2" maxlength="256" name="phone" placeholder="Phone number" type="tel" id="Phone-2" required=""/>
+    <input class="text-field-2 w-input" maxlength="256" name="name" placeholder="Name" type="text" id="name-2"/>
+    <input class="text-field-2 w-input" maxlength="256" name="email" placeholder="Email" type="email" id="email-2" required=""/>
+    <input class="text-field-2 w-input" maxlength="256" name="phone" placeholder="Phone number" type="tel" id="Phone-2" required=""/>
     
-    <select id="Select-2" name="service" class="select-field">
+    <select id="Select-2" name="service" class="select-field w-select">
       <option value="">Select Services</option>
       <option value="Tattoo">TATTOO</option>
       <option value="Piercing">PIERCING</option>
