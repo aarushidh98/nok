@@ -79,14 +79,15 @@ document.addEventListener('DOMContentLoaded', function () {
     submitBtn.value = 'Please wait...';
     submitBtn.disabled = true;
 
-    const payload = {
-      access_key: '401f5e14-ebcd-4180-ba43-68a87ba45096',
-      subject: 'New Booking Enquiry from Website',
-      name:    document.getElementById('name-2').value,
-      email:   document.getElementById('email-2').value,
-      phone:   document.getElementById('Phone-2').value,
-      service: document.getElementById('Select-2') ? document.getElementById('Select-2').value : ''
-    };
+   // Replace the payload section in form.js with this
+const payload = {
+  access_key: '401f5e14-ebcd-4180-ba43-68a87ba45096',
+  subject: 'New Booking Enquiry from Website',
+  name:    form.querySelector('[name="name"]').value,
+  email:   form.querySelector('[name="email"]').value,
+  phone:   form.querySelector('[name="phone"]').value,
+  service: form.querySelector('[name="service"]') ? form.querySelector('[name="service"]').value : ''
+};
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
