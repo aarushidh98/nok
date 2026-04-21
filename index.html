@@ -210,34 +210,33 @@ window.onresize = function(){ calculateScroll(); }
   const errorMsg = document.getElementById('form-error');
 
   form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // Stops page redirect
+    e.preventDefault();
 
     const submitBtn = form.querySelector('[type="submit"]');
     submitBtn.value = 'Please wait...';
     submitBtn.disabled = true;
 
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData);
 
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: formData          // ✅ Sending as FormData instead of JSON
       });
 
       const result = await response.json();
 
-      if (result.success) {
-        form.style.display = 'none';         // Hide the form
-        successMsg.style.display = 'block';  // Show success message
+      if (response.ok) {        // ✅ Checking response.ok instead of result.success
+        form.style.display = 'none';
+        successMsg.style.display = 'block';
+        errorMsg.style.display = 'none';
       } else {
-        errorMsg.style.display = 'block';    // Show error message
+        errorMsg.style.display = 'block';
         submitBtn.value = 'book';
         submitBtn.disabled = false;
       }
     } catch (error) {
-      errorMsg.style.display = 'block';      // Show error message
+      errorMsg.style.display = 'block';
       submitBtn.value = 'book';
       submitBtn.disabled = false;
     }
