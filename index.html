@@ -141,11 +141,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     <!-- This sets the subject line of the email you receive -->
     <input type="hidden" name="subject" value="New Booking Enquiry from Website">
 
-    <input class="text-field-2 w-input" maxlength="256" name="name" placeholder="Name" type="text" id="name-2"/>
-    <input class="text-field-2 w-input" maxlength="256" name="email" placeholder="Email" type="email" id="email-2" required=""/>
-    <input class="text-field-2 w-input" maxlength="256" name="phone" placeholder="Phone number" type="tel" id="Phone-2" required=""/>
+    <input class="text-field-2" maxlength="256" name="name" placeholder="Name" type="text" id="name-2"/>
+    <input class="text-field-2" maxlength="256" name="email" placeholder="Email" type="email" id="email-2" required=""/>
+    <input class="text-field-2" maxlength="256" name="phone" placeholder="Phone number" type="tel" id="Phone-2" required=""/>
     
-    <select id="Select-2" name="service" class="select-field w-select">
+    <select id="Select-2" name="service" class="select-field">
       <option value="">Select Services</option>
       <option value="Tattoo">TATTOO</option>
       <option value="Piercing">PIERCING</option>
@@ -156,12 +156,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   </form>
 
   <!-- Success Message -->
-  <div class="w-form-done" id="form-success" style="display:none;">
+  <div id="form-success" style="display:none;">
     <div>Thank you! Your submission has been received!</div>
   </div>
 
   <!-- Error Message -->
-  <div class="w-form-fail" id="form-error" style="display:none;">
+  <div id="form-error" style="display:none;">
     <div>Oops! Something went wrong while submitting the form.</div>
   </div>
 </div></div>
