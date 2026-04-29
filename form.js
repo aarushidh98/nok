@@ -102,6 +102,12 @@ const payload = {
         form.style.display = 'none';
         successMsg.style.display = 'block';
         errorMsg.style.display = 'none';
+
+          // Google Ads / GTM Conversion Tracking
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'event': 'form_submitted'
+    
       } else {
         errorMsg.style.display = 'block';
         submitBtn.value = 'book';
