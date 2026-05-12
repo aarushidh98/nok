@@ -1,0 +1,102 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+.pg{font-family:'Space Grotesk',sans-serif;background:#000;color:#fff;min-height:600px;overflow:hidden;position:relative;}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 32px;border-bottom:0.5px solid #222;}
+.nav-logo{height:32px;}
+.nav-back{font-size:11px;letter-spacing:0.1em;color:#555;text-decoration:none;font-weight:500;transition:color 0.2s;}
+.nav-back:hover{color:#ff0e11;}
+.center-block{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 32px 40px;text-align:center;position:relative;}
+.line-reveal{overflow:hidden;margin-bottom:6px;}
+.sub-label{font-size:11px;letter-spacing:0.18em;color:#555;font-weight:500;opacity:0;transform:translateY(12px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.big-ty{font-size:72px;font-weight:700;line-height:1;color:#fff;letter-spacing:-0.02em;opacity:0;transform:translateY(30px);transition:opacity 0.7s ease 0.15s,transform 0.7s ease 0.15s;}
+.big-ty span{color:#ff0e11;}
+.tagline{font-size:13px;color:#666;letter-spacing:0.06em;margin-top:18px;opacity:0;transform:translateY(12px);transition:opacity 0.6s ease 0.35s,transform 0.6s ease 0.35s;}
+.divider{width:40px;height:1px;background:#ff0e11;margin:24px auto;opacity:0;transition:opacity 0.5s ease 0.5s,width 0.6s ease 0.5s;}
+.msg{font-size:13px;color:#888;max-width:360px;line-height:1.8;opacity:0;transform:translateY(10px);transition:opacity 0.6s ease 0.6s,transform 0.6s ease 0.6s;}
+.social-section{padding:0 32px 32px;opacity:0;transform:translateY(16px);transition:opacity 0.6s ease 0.75s,transform 0.6s ease 0.75s;}
+.social-label{font-size:9px;letter-spacing:0.14em;color:#444;font-weight:600;text-align:center;margin-bottom:16px;}
+.social-grid{display:flex;justify-content:center;gap:12px;}
+.soc-card{border:0.5px solid #222;padding:14px 20px;display:flex;align-items:center;gap:10px;text-decoration:none;transition:border-color 0.2s,background 0.2s;flex:1;max-width:140px;cursor:pointer;}
+.soc-card:hover{border-color:#ff0e11;background:#0f0f0f;}
+.soc-icon{width:20px;height:20px;flex-shrink:0;}
+.soc-name{font-size:11px;color:#fff;font-weight:600;letter-spacing:0.06em;display:block;}
+.soc-handle{font-size:10px;color:#555;letter-spacing:0.03em;display:block;margin-top:2px;}
+.footer-bar{border-top:0.5px solid #1a1a1a;padding:14px 32px;display:flex;justify-content:space-between;align-items:center;opacity:0;transition:opacity 0.5s ease 1s;}
+.footer-copy{font-size:10px;color:#333;letter-spacing:0.05em;}
+.footer-addr{font-size:10px;color:#333;text-align:right;}
+.active .sub-label,.active .big-ty,.active .tagline,.active .divider,.active .msg,.active .social-section,.active .footer-bar{opacity:1;transform:translateY(0);}
+.active .divider{width:40px;}
+.ticker{overflow:hidden;border-top:0.5px solid #111;border-bottom:0.5px solid #111;padding:8px 0;margin-bottom:0;}
+.ticker-inner{display:flex;white-space:nowrap;animation:tick 18s linear infinite;}
+.ticker-inner span{font-size:10px;letter-spacing:0.15em;color:#2a2a2a;padding-right:48px;font-weight:600;}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+</style>
+
+<div class="pg" id="page">
+
+  <div class="container3 w-container"><a href="index.html" aria-current="page" class="brand w-nav-brand w--current"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png" loading="lazy" width="85" height="Auto" alt="" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image-p-800.png 800w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png 1080w" sizes="78px"></a><nav role="navigation" class="nav-menu w-nav-menu"><a href="artists.html" class="button-5 w-button">ARTISTS</a><a href="book-appointment.html" class="button-5 w-button">BOOK APPOINTMENT</a><a href="gallery.html" class="button-5 w-button">GALLERY</a><a href="our-story.html" class="button-5 w-button">OUR STORY</a><a href="contact-us.html" class="button-5 w-button">CONTACT US</a>
+<div class="div-block-35 hd" style="filter: invert(1);"><a href="https://www.instagram.com/nokbynandsss/" target="_blank" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a278182e4e686e5b58f18_instagram.png" loading="lazy" width="35" sizes="35px" alt="" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a278182e4e686e5b58f18_instagram-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a278182e4e686e5b58f18_instagram.png 512w" class="insta"></a><a href="https://api.whatsapp.com/send/?phone=919810448513&amp;text=Hi&amp;type=phone_number&amp;app_absent=0" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2b76e0b5bd1329782753_whatsapp.png" loading="lazy" width="35" alt="" class="insta"></a><a href="https://www.threads.com/@nokbynandsss?igshid=NTc4MTIwNjQ2YQ==" target="_blank" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c2b541866fec945c5cb_threads.png" loading="lazy" width="35" alt="" class="insta"></a><a href="https://www.facebook.com/nokbynandsss/" target="_blank" class="link-block-4 w-inline-block"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c6369ad25f0c4b5ceb1_facebook.png" loading="lazy" width="35" sizes="35px" alt="" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c6369ad25f0c4b5ceb1_facebook-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/696a2c6369ad25f0c4b5ceb1_facebook.png 512w" class="insta"></a></div>  
+<a href="artists.html" class="nav-link w-nav-link" style="max-width: 1366px;">artists</a><a href="book-appointment.html" class="nav-link w-nav-link" style="max-width: 1366px;">BOOK APPOINTMENT</a><a href="gallery.html" class="nav-link w-nav-link" style="max-width: 1366px;">GALLERY</a><a href="our-story.html" class="nav-link w-nav-link" style="max-width: 1366px;">OUR STORY</a><a href="contact-us.html" class="nav-link w-nav-link" style="max-width: 1366px;">CONTACT</a></nav><div class="menu-button w-nav-button" style="-webkit-user-select: text;" aria-label="menu" role="button" tabindex="0" aria-controls="w-nav-overlay-0" aria-haspopup="menu" aria-expanded="false"><div data-w-id="f9c25550-7365-0e27-95ec-77b36acfb77d" class="menu-parent"><div data-w-id="f9c25550-7365-0e27-95ec-77b36acfb77e" class="menu-bar" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div><div data-w-id="f9c25550-7365-0e27-95ec-77b36acfb77f" class="menu-bar" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div><div data-w-id="f9c25550-7365-0e27-95ec-77b36acfb780" class="menu-bar" style="transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;"></div></div></div></div>
+
+  <div class="ticker">
+    <div class="ticker-inner">
+      <span>NOK BY NANDS</span><span>TATTOO</span><span>PIERCING</span><span>TOOTH GEM</span><span>CONNAUGHT PLACE</span><span>DELHI</span>
+      <span>NOK BY NANDS</span><span>TATTOO</span><span>PIERCING</span><span>TOOTH GEM</span><span>CONNAUGHT PLACE</span><span>DELHI</span>
+      <span>NOK BY NANDS</span><span>TATTOO</span><span>PIERCING</span><span>TOOTH GEM</span><span>CONNAUGHT PLACE</span><span>DELHI</span>
+      <span>NOK BY NANDS</span><span>TATTOO</span><span>PIERCING</span><span>TOOTH GEM</span><span>CONNAUGHT PLACE</span><span>DELHI</span>
+    </div>
+  </div>
+
+  <div class="center-block">
+    <div class="line-reveal"><div class="sub-label">BOOKING REQUEST RECEIVED</div></div>
+    <div class="line-reveal"><div class="big-ty">THANK<br><span>YOU.</span></div></div>
+    <div class="tagline">We'll reach out within 24 hours to confirm your appointment.</div>
+    <div class="divider"></div>
+    <div class="msg">Your story matters to us. While you wait, follow us on social media to see our latest work, studio updates, and inspiration.</div>
+  </div>
+
+  <div class="social-section">
+    <div class="social-label">FOLLOW US</div>
+    <div class="social-grid">
+      <a href="https://www.instagram.com/nokbynandsss/" target="_blank" class="soc-card">
+        <svg class="soc-icon" viewBox="0 0 24 24" fill="none" stroke="#ff0e11" stroke-width="1.5">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1" fill="#ff0e11" stroke="none"/>
+        </svg>
+        <div><span class="soc-name">INSTAGRAM</span><span class="soc-handle">@nokbynandsss</span></div>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=919810448513&text=Hi" target="_blank" class="soc-card">
+        <svg class="soc-icon" viewBox="0 0 24 24" fill="none" stroke="#ff0e11" stroke-width="1.5">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+        </svg>
+        <div><span class="soc-name">WHATSAPP</span><span class="soc-handle">+91 98104 48513</span></div>
+      </a>
+      <a href="https://www.threads.com/@nokbynandsss" target="_blank" class="soc-card">
+        <svg class="soc-icon" viewBox="0 0 24 24" fill="none" stroke="#ff0e11" stroke-width="1.5">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+          <path d="M8 12c0-2.21 1.79-4 4-4s4 1.79 4 4-1.79 4-4 4"/>
+          <path d="M12 8v8"/>
+        </svg>
+        <div><span class="soc-name">THREADS</span><span class="soc-handle">@nokbynandsss</span></div>
+      </a>
+      <a href="https://www.facebook.com/nokbynandsss/" target="_blank" class="soc-card">
+        <svg class="soc-icon" viewBox="0 0 24 24" fill="none" stroke="#ff0e11" stroke-width="1.5">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+        </svg>
+        <div><span class="soc-name">FACEBOOK</span><span class="soc-handle">nokbynandsss</span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="footer-copy">ALL RIGHTS RESERVED 2026 NOKBYNANDSSS</div>
+    <div class="footer-addr">Connaught Place, New Delhi 110001</div>
+  </div>
+
+</div>
+
+<script>
+setTimeout(function(){document.getElementById('page').classList.add('active');},120);
+</script>
