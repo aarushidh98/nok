@@ -98,16 +98,10 @@ const payload = {
 
       const result = await response.json();
 
-      if (response.ok || result.success) {  // ✅ Double check
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-        errorMsg.style.display = 'none';
-
-          // Google Ads / GTM Conversion Tracking
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({
-    'event': 'form_submitted'
-    
+      if (response.ok || result.success) {
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ 'event': 'form_submitted' });
+        window.location.href = "https://nokbynandsss.com/thank-you.html";
       } else {
         errorMsg.style.display = 'block';
         submitBtn.value = 'book';
