@@ -1,5 +1,6 @@
 <head>
   <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap');
@@ -34,12 +35,13 @@
 .ticker-inner{display:flex;white-space:nowrap;animation:tick 18s linear infinite;}
 .ticker-inner span{font-size:10px;letter-spacing:0.15em;color:#fff;padding-right:48px;font-weight:600;}
 .paragraph._1 {margin-top: 18px; margin-bottom: 0;}
-.text-field-2.pd {color: #fff; }
+.text-field-2.pd {color: #fff; text-align: center;}
 .topnav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 32px;
+
   background-color: #fff;
   width: 100%;
 }
@@ -48,12 +50,17 @@
   font-size: 11px;
   letter-spacing: 0.1em;
   color: #ff0e11;
+   flex-shrink: 0;
   text-decoration: none;
   font-weight: 600;
 }
 
 .back-link:hover {
   color: #000;
+}
+.topnav a:first-child {
+  min-width: 0;
+  flex-shrink: 0;
 }
 @media (max-width: 480px) {
 
@@ -128,6 +135,11 @@
   }
 
 }
+@media (max-width: 480px) {
+    .paragraph._1 {
+        display: block;
+    }
+}
 @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 
@@ -136,7 +148,7 @@
   <a href="index.html">
     <img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png" width="85" alt="logo">
   </a>
-  <a href="index.html" class="nav-link" >↩ BACK TO HOMEPAGE</a>
+  <a href="index.html" class="back-link" >↩ BACK TO HOMEPAGE</a>
 </div>
 
   <!-- <div class="container3 w-container" style="background-color: #fff; display: flex; justify-content: space-between; align-items: center; max-width: 100%; margin: 0;"><a href="index.html" aria-current="page" class="brand w-nav-brand w--current"><img src="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png" loading="lazy" width="85" height="Auto" alt="" srcset="https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image-p-500.png 500w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image-p-800.png 800w, https://cdn.prod.website-files.com/693faa632efcb64b49ecce32/695e301824c93ddd6272800e_shared%20image.png 1080w" sizes="78px"></a>
